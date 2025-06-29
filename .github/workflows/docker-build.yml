@@ -25,7 +25,7 @@ jobs:
       # Paso 3: Compila el proyecto con Maven, omitiendo los tests
       - name: Build with Maven
         run: mvn clean package -DskipTests
-        working-directory: pnc-jpa-example-section-2
+        working-directory: pnc-jpa-example-section-2 # PASO EXTRA PORQUE EL PROYECTO ESTÁ EN UN SUBDIRECTORIO
 
       # Paso 4: Inicia sesión en Docker Hub usando secretos
       - name: Log in to Docker Hub
@@ -34,6 +34,7 @@ jobs:
       # Paso 5: Construye la imagen Docker con la etiqueta especificada
       - name: Build Docker image
         run: docker build -t andra55/demo-employees:latest .
+        working-directory: pnc-jpa-example-section-2 # PASO EXTRA PORQUE EL PROYECTO ESTÁ EN UN SUBDIRECTORIO
 
       # Paso 6: Sube la imagen Docker a Docker Hub
       - name: Push Docker image
