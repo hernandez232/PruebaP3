@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: demoEmployees
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/employees_management
+    username: postgres
+    password: 12345
+
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+  liquibase:
+    enabled: false
+    change-log: classpath:db.changelog/db.changelog-master.yaml
+
+app:
+  #Important note: the JWT secret must be a valid Base64 string and sufficiently long (minimum 32 bytes for HS256). For example
+  jwt-secret: ${JWT_SECRET:dd1c0c25edf2320965c59832612f58a9ab84f99ce66f8c3ae559fef5bc85fb58}
+  jwt-expiration-time: 3600000 # 1 hour in milliseconds
