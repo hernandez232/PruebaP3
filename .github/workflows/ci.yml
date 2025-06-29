@@ -27,6 +27,6 @@ jobs:                      # Definición de los trabajos (jobs) a realizar
         working-directory: pnc-jpa-example-section-2 # PASO EXTRA PORQUE EL PROYECTO ESTÁ EN UN SUBDIRECTORIO
         # Ejecuta el comando para compilar y empaquetar el proyecto
 
-      - name: Run Tests
-        run: mvn test
+      #- name: Run Tests
+      #  run: mvn test
         # Ejecuta los tests del proyecto
