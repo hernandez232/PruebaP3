@@ -14,10 +14,10 @@ import java.util.Date;
 public class JwtTokenProvider {
 
     // Obtener los valores necesarios desde el pom
-    @Value("${spring.app.jwt-secret}")
+    @Value("${app.jwt-secret}") // MODIFICAR, SE DEBE QUITAR "spring"
     private String secret;
 
-    @Value("${spring.app.jwt-expiration-time}")
+    @Value("${app.jwt-expiration-time}") // MODIFICAR, SE DEBE QUITAR "spring"
     private String expirationTime;
 
     // Crear una función para generar el token con JWT
