@@ -25,6 +25,7 @@ jobs:
       # Paso 3: Compila el proyecto con Maven, omitiendo los tests
       - name: Build with Maven
         run: mvn clean package -DskipTests
+        working-directory: PruebaP3/pnc-jpa-example-section-2
 
       # Paso 4: Inicia sesión en Docker Hub usando secretos
       - name: Log in to Docker Hub
