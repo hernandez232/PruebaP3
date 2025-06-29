@@ -24,6 +24,7 @@ jobs:                      # Definición de los trabajos (jobs) a realizar
 
       - name: Build with Maven
         run: mvn clean install
+        working-directory: pnc-jpa-example-section-2 # PASO EXTRA PORQUE EL PROYECTO ESTÁ EN UN SUBDIRECTORIO
         # Ejecuta el comando para compilar y empaquetar el proyecto
 
       - name: Run Tests
